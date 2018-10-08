@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,6 +10,9 @@
     <Authors>算神</Authors>
     <LangVersion>7.3</LangVersion>
     <Product>dnspod cli tools</Product>
+    <PackAsTool>true</PackAsTool>
+    <Description>用于修改dnspod域名记录的dotnet cli tools</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
