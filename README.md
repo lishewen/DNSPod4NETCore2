@@ -13,11 +13,11 @@
 
 # DNSPod4NETCore2.Cli
 ## 配上一个Cli的例子，可用于修改域名记录，使用 .net core global tools 实现
-## 可通过下面命令安装获取
-`dotnet tool install --g dnspod`
-## 使用
+### 可通过下面命令安装获取
+`dotnet tool install -g dnspod`
+### 使用
 `dnspod [option]`
-## 参数表
+### 参数表
 * -t,--Token  :     API Token.格式：[api_id],[api_token]
 * -d,--DomainName  :     域名.如：lishewen.com
 * -r,--RecordId  :     RecordId.不输入则通过Record.List接口查询返回，多一次请求
