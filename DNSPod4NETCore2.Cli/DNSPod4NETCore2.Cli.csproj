@@ -12,7 +12,7 @@
     <Product>dnspod cli tools</Product>
     <PackAsTool>true</PackAsTool>
     <Description>用于修改dnspod域名记录的dotnet cli tools</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

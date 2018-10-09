@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DNSPod4NETCore2.Models;
+using Newtonsoft.Json;
+using System;
 
 namespace DNSPod4NETCore2
 {
@@ -101,6 +103,16 @@ namespace DNSPod4NETCore2
         public dynamic List(int domainId)
         {
             return List(new { domain_id = domainId });
+        }
+
+        /// <summary>
+        /// 记录列表
+        /// </summary>
+        /// <param name="domainId">域名</param>
+        /// <returns></returns>
+        public DnsPodRecordList List(string domain)
+        {
+            return JsonConvert.DeserializeObject<DnsPodRecordList>(List(new { domain }).ToString());
         }
 
         public dynamic List(object paramObject)
