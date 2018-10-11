@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewData["Title"] = "IP";
+}
+
+<h2>你的公网IP：@ViewData["IP"]</h2>
+
+<a asp-action="EditIP" asp-route-ip="@ViewData["IP"]">修改DDNS IP</a>
