@@ -10,7 +10,7 @@ namespace DNSPod4NETCore2.Cli
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("DnsPod Cli Tools v1.0");
+            Console.WriteLine("DnsPod Cli Tools v1.1");
 
             var builder = new ConfigurationBuilder();
             builder.AddCommandLine(args, new Dictionary<string, string> {
