@@ -52,6 +52,8 @@ namespace DNSPod4NETCore2.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseRouting();
+
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

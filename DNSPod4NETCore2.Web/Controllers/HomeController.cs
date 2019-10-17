@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace DNSPod4NETCore2.Web.Controllers
     {
         private readonly DDnsConfiguration configuration;
         private readonly DnsPodRecord record;
+        private const string MyDDNS = "lishewen.vicp.net";
         public HomeController(IOptions<DDnsConfiguration> config, DnsPodRecord dnsPodRecord)
         {
             configuration = config.Value;
@@ -45,6 +47,7 @@ namespace DNSPod4NETCore2.Web.Controllers
         public async Task<IActionResult> IP()
         {
             ViewData["IP"] = await GetIPAsync();
+            ViewData["DDNSIP"] = GetDDNSIP();
             return View();
         }
         [HttpGet("[controller]/[action]/{ip}")]
@@ -73,6 +76,12 @@ namespace DNSPod4NETCore2.Web.Controllers
 
             Match rebool = Regex.Match(all, @"\d{2,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}");
             return rebool.Value;
+        }
+
+        private string GetDDNSIP()
+        {
+            IPHostEntry IPinfo = Dns.GetHostEntry(MyDDNS);
+            return IPinfo.AddressList[0].ToString();
         }
     }
 }
