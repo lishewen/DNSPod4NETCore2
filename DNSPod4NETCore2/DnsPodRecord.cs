@@ -36,7 +36,6 @@ namespace DNSPod4NETCore2
         /// <returns>记录ID</returns>
         public int Create(int domainId, string subDomain, string recordValue, string recordType, string recordLine)
         {
-            var recordId = 0;
             object p = new
             {
                 domain_id = domainId,
@@ -45,7 +44,7 @@ namespace DNSPod4NETCore2
                 record_line = recordLine,
                 value = recordValue
             };
-            recordId = Create(p);
+            int recordId = Create(p);
             return recordId;
         }
 
@@ -60,7 +59,6 @@ namespace DNSPod4NETCore2
         /// <returns>记录ID</returns>
         public int Create(string domainName, string subDomain, string recordValue, string recordType = "A", string recordLineId = "0")
         {
-            var recordId = 0;
             object p = new
             {
                 domain = domainName,
@@ -69,7 +67,7 @@ namespace DNSPod4NETCore2
                 record_line_id = recordLineId,
                 value = recordValue
             };
-            recordId = Create(p);
+            int recordId = Create(p);
             return recordId;
         }
 
@@ -265,7 +263,12 @@ namespace DNSPod4NETCore2
 
         public bool Remark(int domainId, int recordId, string subDomainremark)
         {
-            dynamic result = client.PostApiRequest("Record.Remark", new { });
+            dynamic result = client.PostApiRequest("Record.Remark", new
+            {
+                domain_id = domainId,
+                record_id = recordId,
+                subDomainremark
+            });
             return Convert.ToInt32(result.status.code) == 1;
         }
 

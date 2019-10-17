@@ -9,7 +9,7 @@ namespace DNSPod4NETCore2
 {
     public class DnsPodClient : IDnsPodClient
     {
-        private DnsPodConfiguration _dnsPodInfo;
+        private readonly DnsPodConfiguration _dnsPodInfo;
         private readonly HttpClient client;
         public DnsPodClient(HttpClient client, DnsPodConfiguration configuration)
         {
