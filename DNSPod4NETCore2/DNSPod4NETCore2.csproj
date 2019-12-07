@@ -5,9 +5,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>算神</Authors>
     <Company>算神工作室</Company>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Description>DNSPod API For NETCore 2.x 公共类库
-兼容.Net Core 3</Description>
+兼容.Net Core 3.x</Description>
     <Copyright>CopyRight 算神工作室 2018-2019</Copyright>
     <PackageProjectUrl>https://github.com/lishewen/DNSPod4NETCore2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lishewen/DNSPod4NETCore2</RepositoryUrl>
@@ -17,8 +17,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
 </Project>
