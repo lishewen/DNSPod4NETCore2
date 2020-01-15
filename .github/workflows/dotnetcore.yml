@@ -16,4 +16,4 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push ./DNSPod4NETCore2/bin/release/*.nupkg -s https://nuget.pkg.github.com/lishewen/index.json -k ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget push ./DNSPod4NETCore2/bin/Release/*.nupkg -s https://nuget.pkg.github.com/lishewen/index.json -k ${{ secrets.GITHUB_TOKEN }}
