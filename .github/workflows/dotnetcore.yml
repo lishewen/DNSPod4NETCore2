@@ -15,3 +15,5 @@ jobs:
         dotnet-version: 3.1.101
     - name: Build with dotnet
       run: dotnet build --configuration Release
+    - name: Push generated package to GitHub registry
+      run: dotnet nuget push ./bin/release/*.nupkg -s https://nuget.pkg.github.com/lishewen/index.json -k ${{ secrets.GITHUB_TOKEN }}
