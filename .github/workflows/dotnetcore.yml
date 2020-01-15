@@ -2,6 +2,13 @@ name: .NET Core
 
 on: [push]
 
+env:
+  NUGET_UPLOAD_URL: https://nuget.pkg.github.com/lishewen/
+  NUGET_SOURCE_URL: https://nuget.pkg.github.com/lishewen/index.json
+  NUGET_USER_NAME: lishewen
+  NUGET_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+  NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   build:
 
@@ -13,7 +20,13 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+      with:
+       nuget-version: latest
+    - name: Configure dotnet and NuGet
+      run: make dotnet/configure
     - name: Build with dotnet
       run: dotnet build --configuration Release
-    - name: Push generated package to GitHub registry
-      run: dotnet nuget push ./DNSPod4NETCore2/bin/Release/*.nupkg -s https://nuget.pkg.github.com/lishewen/index.json -k ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish the package to GitHub Package Repository
+      run: make -- -dotnet/push
