@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30608.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNSPod4NETCore2", "DNSPod4NETCore2\DNSPod4NETCore2.csproj", "{09805BAB-A4A3-48F3-9920-4C4803510C3E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNSPod4NETCore2.Cli", "DNSPod4NETCore2.Cli\DNSPod4NETCore2.Cli.csproj", "{F796AE3B-C763-46EC-A975-6AC889063982}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNSPod4NETCore2.Web", "DNSPod4NETCore2.Web\DNSPod4NETCore2.Web.csproj", "{871BE390-0822-412E-BEE9-D3CD729BCED3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNSPod4NETCore2.Web", "DNSPod4NETCore2.Web\DNSPod4NETCore2.Web.csproj", "{871BE390-0822-412E-BEE9-D3CD729BCED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNSPod4NETCore.Blazor", "DNSPod4NETCore.Blazor\DNSPod4NETCore.Blazor.csproj", "{71070A08-2B01-4F95-9DA0-5C809BB1FAB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{871BE390-0822-412E-BEE9-D3CD729BCED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{871BE390-0822-412E-BEE9-D3CD729BCED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{871BE390-0822-412E-BEE9-D3CD729BCED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71070A08-2B01-4F95-9DA0-5C809BB1FAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71070A08-2B01-4F95-9DA0-5C809BB1FAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71070A08-2B01-4F95-9DA0-5C809BB1FAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71070A08-2B01-4F95-9DA0-5C809BB1FAB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
