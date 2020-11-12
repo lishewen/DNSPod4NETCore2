@@ -24,7 +24,6 @@ namespace DNSPod4NETCore2
         public dynamic PostApiRequest(string address, object param = null)
         {
             dynamic obj = null;
-
             try
             {
                 string apiUrl = _dnsPodInfo.Host + address;
@@ -91,9 +90,9 @@ namespace DNSPod4NETCore2
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
 
             return obj ?? new { status = new { code = 0, message = "DNSPod服务器接口异常，无法正常调用！" } };
@@ -112,7 +111,7 @@ namespace DNSPod4NETCore2
             var objProperties = (from x in data.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance) where x.CanRead select x).ToList();
 
             //将属性名与值拼接，返回string类型的数组
-            var arrProValue = (from y in objProperties select string.Format("{0}={1}", y.Name, y.GetValue(data, new object[0]))).ToArray();
+            var arrProValue = (from y in objProperties select string.Format("{0}={1}", y.Name, y.GetValue(data, Array.Empty<object>()))).ToArray();
 
             //将数组以“&”连接
             dataString = string.Join("&", arrProValue);
