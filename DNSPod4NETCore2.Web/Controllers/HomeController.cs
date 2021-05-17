@@ -16,6 +16,7 @@ namespace DNSPod4NETCore2.Web.Controllers
         private readonly DDnsConfiguration configuration;
         private readonly DnsPodRecord record;
         private const string MyDDNS = "lishewen.vicp.net";
+        private const string ASUSDDNS = "lishewen.asuscomm.com";
         public HomeController(IOptions<DDnsConfiguration> config, DnsPodRecord dnsPodRecord)
         {
             configuration = config.Value;
@@ -47,7 +48,8 @@ namespace DNSPod4NETCore2.Web.Controllers
         public async Task<IActionResult> IP()
         {
             ViewData["IP"] = await GetIPAsync();
-            ViewData["DDNSIP"] = GetDDNSIP();
+            ViewData["DDNSIP"] = GetDDNSIP(MyDDNS);
+            ViewData["ADDNSIP"] = GetDDNSIP(ASUSDDNS);
             return View();
         }
         [HttpGet("[controller]/[action]/{ip}")]
@@ -66,7 +68,7 @@ namespace DNSPod4NETCore2.Web.Controllers
         }
         private static async Task<string> GetIPAsync()
         {
-            HttpClient client = new HttpClient();
+            HttpClient client = new();
 
             string all = string.Empty;
 
@@ -78,9 +80,9 @@ namespace DNSPod4NETCore2.Web.Controllers
             return rebool.Value;
         }
 
-        private string GetDDNSIP()
+        private string GetDDNSIP(string domain)
         {
-            IPHostEntry IPinfo = Dns.GetHostEntry(MyDDNS);
+            IPHostEntry IPinfo = Dns.GetHostEntry(domain);
             return IPinfo.AddressList[0].ToString();
         }
     }
