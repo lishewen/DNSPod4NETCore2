@@ -1,28 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
-    <AssemblyName>dnspod</AssemblyName>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Company>算神工作室</Company>
-    <Authors>算神</Authors>
-    <LangVersion>latest</LangVersion>
-    <Product>dnspod cli tools</Product>
-    <PackAsTool>true</PackAsTool>
-    <Description>用于修改dnspod域名记录的dotnet cli tools</Description>
-    <Version>1.1.6</Version>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+		<AssemblyName>dnspod</AssemblyName>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Company>算神工作室</Company>
+		<Authors>算神</Authors>
+		<LangVersion>latest</LangVersion>
+		<Product>dnspod cli tools</Product>
+		<PackAsTool>true</PackAsTool>
+		<Description>用于修改dnspod域名记录的dotnet cli tools</Description>
+		<Version>1.1.7</Version>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<None Include="..\readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="6.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DNSPod4NETCore2\DNSPod4NETCore2.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DNSPod4NETCore2\DNSPod4NETCore2.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 # DNSPod4NETCore2
-## DNSPod API For NETCore 2.x 公共类库，兼容.Net Core 3
+## DNSPod API For NETCore 2.x;.Net Core 3;.Net 5;.Net 6
 ### 支持 Asp .Net Core DI
 > 移植自：https://gitee.com/zhengwei804/DNSPodForNET
 
