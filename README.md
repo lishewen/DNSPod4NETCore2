@@ -20,9 +20,11 @@
 ### 使用
 `dnspod [option]`
 ### 参数表
-* -t,--Token  :     API Token.格式：[api_id],[api_token]
-* -d,--DomainName  :     域名.如：lishewen.com
+* --secretid  :     SecretId
+* --secretkey  :     SecretKey
+* -d,--Domain  :     域名.如：lishewen.com
 * -r,--RecordId  :     RecordId.不输入则通过Record.List接口查询返回，多一次请求
 * -v,--Value  :     记录值.
 * -s,--SubDomain  :     子域名.如：www
 * --type  :     记录类型.如：A、TXT等。不输入则默认为A记录
+* --line  :     记录线路，通过 API 记录线路获得，中文，比如：默认
