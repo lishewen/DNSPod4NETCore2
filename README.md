@@ -13,6 +13,8 @@
 
 # DNSPod4NETCore2.Cli
 ## 配上一个Cli的例子，可用于修改域名记录，使用 .net core global tools 实现
+## 支持.Net 6;.Net 7;.Net 8
+## 自Cli 1.2.0版本起，使用腾讯云API 3.0，不再使用旧版接口。
 ### 可通过下面命令安装获取
 `dotnet tool install -g dnspod`
 ### 使用
